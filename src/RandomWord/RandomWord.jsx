@@ -99,11 +99,11 @@ function RandomWord() {
             Attempts
         </div>
         <div className='bodyBox'>
-            {attempt.map((value,index) => {
+            {attempt.map((value,index) => (
                 <div>
                 {value}
                 </div>
-            })}
+            ))}
         </div>
         </div>
         <div>
@@ -111,11 +111,11 @@ function RandomWord() {
             Remaining Charatcers
         </div>
         <div className='bodyBox'>
-            {remainingCharacters.map((value,index) => {
+            {remainingCharacters.map((value,index) => (
                 <div>
                 {value}
                 </div>
-            })}
+            ))}
         </div>
         </div>
       </div>
