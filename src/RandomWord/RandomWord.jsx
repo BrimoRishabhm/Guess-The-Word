@@ -90,11 +90,6 @@ function RandomWord() {
         </div>
         }
       </div>
-      {word ? (
-        <p>7-letter word: {word}</p>
-      ) : (
-        <p>Loading...</p>
-      )}
     </div>
     <div className='attempt'>
       <p className='text'>Score</p>
