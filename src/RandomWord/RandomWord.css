@@ -1,9 +1,13 @@
 .fullContainer {
   display: flex;
+  margin: auto;
+  //flex-direction: column;
+  max-width: 1200px;
+  min-height: 100vh;
 }
 
 .container {
-  width: 45%;
+  width: 55%;
   position: relative;
 }
 
@@ -56,17 +60,17 @@
   align-items: center;
   text-align: center;
   border: 1px solid white;
+  padding: auto;
 }
 
 .bodyBox {
-  height: 50px;
-  width: 100px;
   background-color: #d8f7fa;
   text-color: white;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
   border: 1px solid white;
+  padding: 15px 0 15px 0;
 }
 
 .congrats {

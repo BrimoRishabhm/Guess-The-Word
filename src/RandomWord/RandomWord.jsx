@@ -84,9 +84,9 @@ function RandomWord() {
         </div>
       </div>
       <div>
-        {(remainingCharacters === 0) &&
+        {(remainingCount === 0) &&
         <div>
-            <p className='congrats'>Congrats! You guessed {word.toUpperCase()} in {attempt} attempts</p>
+            <p className='congrats'>Congrats! You guessed {word.toUpperCase()} in {attempt.slice(-1)} attempts</p>
         </div>
         }
       </div>
@@ -98,25 +98,21 @@ function RandomWord() {
         <div className='headerBox'>
             Attempts
         </div>
-        <div className='bodyBox'>
             {attempt.map((value,index) => (
-                <div>
+                <div className='bodyBox'>
                 {value}
                 </div>
             ))}
-        </div>
         </div>
         <div>
         <div className='headerBox'>
             Remaining Charatcers
         </div>
+        {remainingCharacters.map((value,index) => (
         <div className='bodyBox'>
-            {remainingCharacters.map((value,index) => (
-                <div>
                 {value}
-                </div>
-            ))}
         </div>
+         ))}
         </div>
       </div>
     </div>
