@@ -38,13 +38,14 @@ function RandomWord() {
     for (let i = 0; i < word.length; i++) {
       if (word[i] === clickedLetter) {
         characterIndexes.push(i);
-        setRemainingCharacters((previousRemaining) => [...previousRemaining, remainingCount])
-        setRemainingCount((previousRemainingCount) => previousRemainingCount - 1)
       }
     }
-
+    setRemainingCount((previousRemainingCount) => previousRemainingCount - (characterIndexes.length));
+    setRemainingCharacters((previousRemaining) => [...previousRemaining, remainingCount])
+    console.log(remainingCharacters)
+    setAttemptCount((prevCount) => prevCount + 1)
     setAttempt((previousAttempt) => [...previousAttempt, attemptCount]);
-      setAttemptCount((prevCount) => prevCount + 1)
+    console.log(attempt)
 
     if (characterIndexes.length > 0) {
       const updatedGuessedWord = guessedWord.slice(); 
@@ -54,11 +55,11 @@ function RandomWord() {
       setGuessedWord(updatedGuessedWord);
     }
 
-    console.log("Attempt",attempt)
-    console.log("Remaining",remainingCharacters)
+    //console.log("Attempt",attempt)
+    //console.log("Remaining",remainingCharacters)
   };
   //console.log(attempt)
-  console.log(remainingCharacters)
+  
 
   return (
     <div className='fullContainer'>
@@ -84,7 +85,7 @@ function RandomWord() {
         </div>
       </div>
       <div>
-        {(remainingCount === 0) &&
+        {(remainingCount <= 0) &&
         <div>
             <p className='congrats'>Congrats! You guessed {word.toUpperCase()} in {attempt.slice(-1)} attempts</p>
         </div>
